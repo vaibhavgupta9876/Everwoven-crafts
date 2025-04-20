@@ -1,0 +1,82 @@
+.image-banner {
+    width: 100%; /* Make the banner container take up the full width */
+    height:500px; /* Adjust height automatically based on the image aspect ratio */
+    overflow: hidden; /* Still good to keep for other potential overflow */
+}
+
+.banner-img {
+    width: auto; /* Make the image fill the width of its container */
+    height: 100%; /* Maintain aspect ratio */
+    display: block;
+    object-fit: contain;
+    margin:0; /* Ensures the whole image is visible without stretching, while maintaining aspect ratio */
+} 
+
+/* Compact Header Below Banner */
+header {
+    background-color: #f4f1df; /* Or your updated warm color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px; /* Less padding for compact look */
+    text-color: white;
+    height: 60px;
+    border-radius:2%; /* Adjust height as needed */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-items span {
+    margin: 0 15px;
+    color: #d9a5a5;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 5%;
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 6px 10px;
+    margin-left: 5px;
+    border: none;
+    background-color:#d9a5a5;
+    color:white;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.div1 {
+    background-color: #f4f1df;
+    color: #d9a5a5;
+    border: 5px solid white;
+    border-radius: 5%;
+    width: 200px;
+    height:auto;
+    text-align: center;
+
+.div1 {
+    background-image: url('images/div1pic.jpg'); /* Change name as needed */
+    background-size: cover;         /* Scales the image to cover the div */
+    background-position: center;    /* Centers the image */
+    background-repeat: no-repeat;   /* Prevents tiling */
+    padding: 20px;                  /* Optional: space around your content */
+    color: white;                   /* Optional: text contrast */
+}
+
+.footer {
+    background-color: #d9a5a5;
+    padding: 10px 0; /* Optional: add spacing */
+}
