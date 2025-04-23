@@ -63,15 +63,10 @@ body {
 .logo img {
     height: 70px;
     width: auto;
-    transition: all 0.5s var(--animation-timing);
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
-    animation: float 6s ease-in-out infinite;
+
 }
 
-.logo img:hover {
-    transform: scale(1.05) rotate(-2deg);
-    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.15));
-}
+
 
 /* Navigation Styles */
 .main-nav ul {
@@ -370,7 +365,6 @@ body {
     margin: 4rem 0;
     position: relative;
     overflow: hidden;
-    animation: fadeIn 1s var(--animation-timing) 0.5s backwards;
 }
 
 .section-title {
