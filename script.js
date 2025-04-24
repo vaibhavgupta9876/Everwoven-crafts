@@ -82,3 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+    // List of products - replace with your actual product names and URLs
+    const products = [
+        { name: "Crochet Flowers", url: "product1.html" },
+        { name: "Crochet Clutchers", url: "product4.html" },
+        { name: "Crochet Charms", url: "product3.html" },
+        { name: "Crochet Octopus", url: "product2.html" },
+        { name: "Crochet Bookmark", url: "product5.html" },
+        { name: "Crochet Bouquet", url: "product6.html" }
+    ];
+
+    // Function to handle search
+    function searchProducts(event) {
+        event.preventDefault();  // Prevent the form from submitting normally
+
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const result = products.filter(product => product.name.toLowerCase().includes(query));
+
+        if (result.length > 0) {
+            // Redirect to the first product that matches the query
+            window.location.href = result[0].url;
+        } else {
+            alert('No products found!');
+        }
+    }
+

@@ -192,11 +192,20 @@
     function updatePrice() {
       const flowerType = document.getElementById('flowerType').value;
       let price = 250;
+
       if (flowerType === 'lily') price = 300;
       else if (flowerType === 'tulip') price = 280;
       else if (flowerType === 'sunflower') price = 260;
+
+      // Automatically select yellow color if sunflower is selected
+      if (flowerType === 'sunflower') {
+        document.getElementById('color').value = 'yellow'; // Automatically set to yellow
+      }
+
       document.getElementById('price').innerText = `₹${price}`;
     }
+
+    document.getElementById('flowerType').addEventListener('change', updatePrice);
 
     function placeOrder() {
       const qty = document.getElementById('quantity').value;
@@ -206,6 +215,9 @@
       const orderText = `Hi! I would like to order a ${flowerLabel} crochet flower (Qty: ${qty}, Color: ${color}) from Everwoven Crafts.`;
       window.location.href = `https://wa.me/919138181263?text=${encodeURIComponent(orderText)}`;
     }
+
+    // Initialize on page load
+    window.onload = updatePrice; // Ensure price and color are updated on page load
   </script>
 </body>
 </html>

@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <!-- Add an ID to the search bar and the form for easier reference -->
+
+
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -26,8 +29,8 @@
                 </ul>
             </nav>
             <div class="search-container">
-                <form class="search-form" role="search">
-                    <input type="search" placeholder="Search our products..." aria-label="Search">
+                <form class="search-form" role="search" onsubmit="searchProducts(event)">
+                    <input type="search"  id="searchInput" placeholder="Search our products..." aria-label="Search">
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -74,7 +77,35 @@
                     </div>
                 </div>
         </a>
-        <a href = "product2.html">
+
+        <a href="product4.html">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/clutcher1.jpeg"
+                        alt="Crochet Creation 4">
+                </div>
+                <div class="product-info">
+                    <h3>Crochet Clutchers</h3>
+                    <p>Crochet hair clutchers for a stylish finish</p>
+                </div>
+            </div>
+        </a>
+        
+
+         <a href="product3.html">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/miniature.jpeg"
+                            alt="Crochet Creation 3">
+                    </div>
+                    <div class="product-info">
+                        <h3>Charms</h3>
+                        <p>Charms that add a touch of handmade magic</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href = "product2.html">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/products/octpous.jpeg"
@@ -87,31 +118,7 @@
                 </div>
          </a>
 
-         <a href="product3.html">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/products/miniature.jpeg"
-                            alt="Crochet Creation 3">
-                    </div>
-                    <div class="product-info">
-                        <h3>Charms</h3>
-                        <p>charms that add a touch of handmade magic</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="product4.html">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/products/clutcher1.jpeg"
-                            alt="Crochet Creation 4">
-                    </div>
-                    <div class="product-info">
-                        <h3>Crochet Clucthers</h3>
-                        <p>Celebrate the beauty of nature</p>
-                    </div>
-                </div>
-            </a>
+           
 
             <a href="product5.html">
                 <div class="product-card">
@@ -120,8 +127,8 @@
                             alt="Crochet Creation 5">
                     </div>
                     <div class="product-info">
-                        <h3>For Bookworms</h3>
-                        <p>Enjoy reading with our bookmarks</p>
+                        <h3>Crochet Bookmarks</h3>
+                        <p>Crochet bookmarks to brighten your reading moments</p>
                     </div>
                 </div>
             </a>
