@@ -18,6 +18,12 @@
     --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit the color from the parent element */
+  }
+  
+
 body {
     font-family: 'Noto Serif JP', 'Playfair Display', serif;
     line-height: 1.8;
@@ -160,9 +166,9 @@ body {
     overflow: hidden;
     position: relative;
     animation: fadeIn 1.5s var(--animation-timing);
-    max-height: 80vh;
-    perspective: 1px;
-        transform-style: preserve-3d;
+    max-height: 90vh;
+    /*perspective: 1px;
+        transform-style: preserve-3d;*/
 }
 
 .hero-banner::before {
@@ -178,7 +184,7 @@ body {
 
 .image-banner {
     width: 100%;
-    height: 100%;
+    height: 800px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -190,7 +196,7 @@ body {
 .image-banner img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     /* Changed from cover to contain to prevent cropping */
     transition: transform 1s var(--animation-timing);
     animation: scaleIn 1.5s var(--animation-timing);
@@ -240,6 +246,18 @@ body {
         opacity: 0.5;
     }
 }
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-link:hover .product-card {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 
 .about-section {
     text-align: center;
@@ -546,9 +564,10 @@ body {
     }
 
     .hero-banner {
-        max-height: 60vh;
-        /* Smaller height on mobile */
+        max-height: none; /* or increase the vh value */
+        height: 100vh; /* optional, if you want it fullscreen */
     }
+    
 
     .image-banner {
         height: auto;

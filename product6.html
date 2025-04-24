@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crochet Bouquets - Everwoven Crafts</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .product-detail-container {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      align-items: center;
+      animation: fadeIn 1.5s var(--animation-timing);
+    }
+
+    .product-detail-image {
+      flex: 1 1 45%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .product-detail-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    .product-detail-info {
+      flex: 1 1 50%;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .product-detail-info h1 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .product-detail-info p {
+      color: var(--text-color);
+      margin-bottom: 2rem;
+    }
+
+    .product-options {
+      margin-bottom: 2rem;
+    }
+
+    .product-options label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .product-options input[type="number"],
+    .product-options textarea {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid rgba(44, 24, 16, 0.3);
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-sizing: border-box;
+    }
+
+    .product-options textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .order-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: 0.9rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.4s var(--animation-timing);
+    }
+
+    .order-button:hover {
+      background-color: var(--accent-color);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/logo.jpeg" alt="Everwoven Crafts Logo">
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-detail-container">
+    <div class="product-detail-image">
+      <!-- Use the same bouquet image as on homepage -->
+      <img src="images/products/boquet.jpeg" alt="Crochet Bouquets" />
+    </div>
+
+    <div class="product-detail-info">
+      <h1>Crochet Bouquets</h1>
+      <p>
+        Celebrate with everlasting beauty. These handcrafted crochet bouquets are perfect for birthdays, weddings, or simply brightening someone’s day. Let us know your color or flower preferences below.
+      </p>
+
+      <div class="product-options">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+      </div>
+
+      <div class="product-options">
+        <label for="custom-text">Customization (flowers, colors, themes):</label>
+        <textarea id="custom-text" name="custom-text" placeholder="Imagine it, tell us, and we’ll make your crochet dreams come true."></textarea>
+      </div>
+
+      <div class="product-options">
+        <label>Price:</label>
+        ₹900 each
+      </div>
+
+      <button class="order-button" onclick="
+        window.location.href='https://wa.me/919138181263?text=' +
+        encodeURIComponent('Hi! I would like to order Crochet Bouquet(s).\nQuantity: ' + document.getElementById('quantity').value + 
+        '\nCustomisation: ' + document.getElementById('custom-text').value + 
+        '\nFrom Everwoven Crafts.');
+      ">
+        Order
+      </button>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>Woven with love, for eternity</p>
+      <p class="copyright">&copy; 2024 Everwoven Crafts. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
