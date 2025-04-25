@@ -1,8 +1,18 @@
+
+
+
+// Scroll to top on page refresh
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
+// Search alert function
 function search() {
     const query = document.querySelector('.search-bar input').value;
     alert("You searched for: " + query);
 }
 
+// Product slider logic
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -28,12 +38,12 @@ function prevSlide() {
 // Initialize on load
 window.onload = () => showSlide(currentSlide);
 
-// Parallax Scroll Effect
+// DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     const heroBanner = document.querySelector('.hero-banner');
     const imageBanner = document.querySelector('.image-banner');
 
-    // Enhanced parallax effect
+    // Parallax scroll effect
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const rate = scrolled * 0.5;
@@ -61,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // Mouse move effect for product cards
+    // Mousemove 3D effect on product cards
     document.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -83,28 +93,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-    // List of products - replace with your actual product names and URLs
-    const products = [
-        { name: "Crochet Flowers", url: "product1.html" },
-        { name: "Crochet Clutchers", url: "product4.html" },
-        { name: "Crochet Charms", url: "product3.html" },
-        { name: "Crochet Octopus", url: "product2.html" },
-        { name: "Crochet Bookmark", url: "product5.html" },
-        { name: "Crochet Bouquet", url: "product6.html" }
-    ];
+// List of products for search
+const products = [
+    { name: "Crochet Flowers", url: "product1.html" },
+    { name: "Crochet Clutchers", url: "product4.html" },
+    { name: "Crochet Charms", url: "product3.html" },
+    { name: "Crochet Octopus", url: "product2.html" },
+    { name: "Crochet Bookmark", url: "product5.html" },
+    { name: "Crochet Bouquet", url: "product6.html" }
+];
 
-    // Function to handle search
-    function searchProducts(event) {
-        event.preventDefault();  // Prevent the form from submitting normally
+// Function to handle product search
+function searchProducts(event) {
+    event.preventDefault();  // Prevent form submission
 
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const result = products.filter(product => product.name.toLowerCase().includes(query));
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const result = products.filter(product => product.name.toLowerCase().includes(query));
 
-        if (result.length > 0) {
-            // Redirect to the first product that matches the query
-            window.location.href = result[0].url;
-        } else {
-            alert('No products found!');
-        }
+    if (result.length > 0) {
+        // Redirect to the first matching product
+        window.location.href = result[0].url;
+    } else {
+        alert('No products found!');
     }
-
+}
