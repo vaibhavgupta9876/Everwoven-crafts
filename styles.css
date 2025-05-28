@@ -18,6 +18,49 @@
     --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#moving-banner {
+    background-color:rgba(139, 69, 19, 0.25); 
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 70px;
+    display: flex;              /* Enable Flexbox */
+    align-items: center;  
+    border-top: 4px solid #fff9f0;
+    border-bottom: 4px solid #fff9f0;
+    
+  }
+
+  .scrolling-text {
+    display: flex;
+    color:var(--background-color);  
+    
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 0;
+    animation: scroll-left 40s linear infinite;
+    position: absolute;
+    white-space: nowrap;
+    line-height: 70px;
+  }
+  .scrolling-text span {
+    margin-right: 3rem; /* adjust spacing between phrases */
+    color:var(--background-color);
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+  
 a {
     text-decoration: none;
     color: inherit; /* Inherit the color from the parent element */
@@ -25,8 +68,9 @@ a {
   
 
 body {
-    font-family: 'Noto Serif JP', 'Playfair Display', serif;
+    font-family:  'Playfair Display', serif;
     line-height: 1.8;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -34,16 +78,34 @@ body {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0 0h100v100H0z" fill="%23f5f0e6" fill-opacity="0.1"/></svg>');
 }
 
+
 /* Header Styles */
 .main-header {
     background-color: var(--secondary-color);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(44, 24, 16, 0.1);
     animation: slideDown 0.8s var(--animation-timing);
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px; /* Slight spacing for sophistication */
+    text-transform: capitalize;
+}
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
 }
 
 @keyframes slideDown {
@@ -81,6 +143,8 @@ body {
     display: flex;
     list-style: none;
     gap: 3rem;
+    font-size: 1.2rem;
+    color:#8b4513;
 }
 
 .main-nav a {
@@ -160,11 +224,13 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-form button:hover {
     background-color: var(--accent-color);
     transform:  scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -178,6 +244,8 @@ body {
     max-height: 80vh;
     perspective: 1px;
     transform-style: preserve-3d;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.15));
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hero-banner::before {
@@ -352,6 +420,14 @@ body {
     position: relative;
     animation: fadeIn 1s var(--animation-timing) 1.8s backwards;
 }
+.main-footer p {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+h1, h2, h3 {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light text-shadow for headings */
+}
 
 .main-footer::before {
     content: '';
@@ -435,10 +511,10 @@ product-card {
     background: white;
     text-decoration: none;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px); 
     position: relative;
-    
+    will-change: transform, box-shadow;
 }
 
 .product-card .product-image img {
@@ -450,7 +526,8 @@ product-card {
 
 .product-card:hover {
     transform: translateY(-5px) ;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 35px rgba(176, 172, 172, 0.74);
+    background-color:rgba(139, 69, 19, 0.15);
 }
 
 .product-image {
@@ -532,6 +609,9 @@ product-card {
 /* Mobile Responsiveness (Max Width 768px) */
 @media (max-width: 768px) {
     /* Search Form */
+    .main-content, .footer-content {
+        padding: 0 20px;
+    }
 
     .header-container {
         display: flex;
@@ -617,6 +697,10 @@ product-card {
     
 }
 @media (max-width: 480px) {
+    .main-content, .footer-content {
+        padding: 0 20px;
+    }
+
     .header-container {
     display: flex;
     flex-wrap: nowrap;  /* Prevent items from wrapping to the next line */

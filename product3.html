@@ -134,7 +134,7 @@
   <main class="product-detail-container">
     <div class="product-detail-image">
       <button class="carousel-button left" onclick="changeImage(-1)">&#8592;</button>
-      <img id="productImage" src="images/products/bow.jpeg" alt="Crochet Charms" />
+      <img id="productImage" src="images/products/bow.jpg" alt="Crochet Charms" />
       <button class="carousel-button right" onclick="changeImage(1)">&#8594;</button>
     </div>
 
@@ -146,7 +146,7 @@
 
       <div class="product-options">
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 80px;">
       </div>
 
       <!-- Dropdown for charm selection -->
@@ -158,6 +158,7 @@
           <option value="cherries-charm">Cherry Charm</option>
           <option value="sunflower-charm">Sunflower Charm</option>
           <option value="Daisies-charm">Daisy Charm</option>
+          <option value="Flower-charm">Flower Charm</option>
         </select>
       </div>
 
@@ -182,10 +183,11 @@
   <script>
     let currentImageIndex = 0;
     const images = [
-      'images/products/bow.jpeg',
-      'images/products/strawberry charm.jpeg',
+      'images/products/bow.jpg',
+      'images/products/strawberry charm.jpg',
       'images/products/miniature.jpeg',
-      'images/products/charms4.jpeg'
+      'images/products/charms4.jpeg',
+      'images/products/flower_charm.jpg'
     ];
 
     function changeImage(direction) {
